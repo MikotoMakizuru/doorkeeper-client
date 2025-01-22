@@ -1,0 +1,19 @@
+<% unless signed_in? %>
+  <h2>Sign in first to explore the provider's API</h2>
+
+  <p>
+    <%= link_to "BootCampログイン", user_doorkeeper_omniauth_authorize_path, class: "btn btn-primary", method: :post %>
+  </p>
+<% else %>
+  <h2>Explore the api</h2>
+
+  <p>
+    <%= link_to "My Credentials", explore_api_path(:me, format: :json), class: "btn btn-primary data-explore" %>
+    <%= link_to "Projects", explore_api_path(:projects, format: :json), class: "btn btn-secondary data-explore" %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  </p>
+
+  <p>You are logged in as <%= current_user.name %></p>
+
+  <p><pre id="display-json">Select one of the api methods above</pre></p>
+<% end %>
