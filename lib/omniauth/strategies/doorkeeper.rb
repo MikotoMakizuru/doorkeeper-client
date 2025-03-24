@@ -5,8 +5,7 @@ module OmniAuth
 
       option :client_options,
              site: ENV["DOORKEEPER_APP_URL"],
-             authorize_path: "/oauth/authorize",
-             scope: "read"
+             authorize_path: "/oauth/authorize"
 
       uid do
         raw_info["id"]
