@@ -277,7 +277,7 @@ Devise.setup do |config|
   config.omniauth :doorkeeper,
                   ENV["DOORKEEPER_APP_ID"],
                   ENV["DOORKEEPER_APP_SECRET"],
-                  scope: "read",
+                  scope: "read write",
                   strategy_class: OmniAuth::Strategies::Doorkeeper
 
   # ==> Warden configuration
